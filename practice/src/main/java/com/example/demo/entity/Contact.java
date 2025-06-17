@@ -44,6 +44,7 @@ public class Contact {
     @Column(name = "building_name", nullable = false)
     private String buildingName;
 
+    
     @Column(name = "contact_type", nullable = false)
     private String contactType;
 
@@ -53,7 +54,6 @@ public class Contact {
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
-
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;

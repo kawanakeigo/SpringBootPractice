@@ -34,5 +34,5 @@ public class ContactServiceImpl implements ContactService {
     public List<Contact> findAllContacts() {
         return contactRepository.findAll();
     }
-    
+   
 }
