@@ -71,7 +71,6 @@ public class ContactController {
         model.addAttribute("contactForm", contactForm);
 
         session.invalidate();
-
         return "completion";
       }
 }
