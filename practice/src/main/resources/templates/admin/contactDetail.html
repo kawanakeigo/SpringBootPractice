@@ -1,0 +1,28 @@
+<!-- src/main/resources/templates/admin/contactDetail.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>お問い合わせ詳細</title>
+</head>
+<body>
+    <h1>お問い合わせ詳細</h1>
+    <p>ID: <span th:text="${contact.id}"></span></p>
+    <p>姓: <span th:text="${contact.lastName}"></span></p>
+    <p>名: <span th:text="${contact.firstName}"></span></p>
+    <p>メール: <span th:text="${contact.email}"></span></p>
+    <p>電話番号: <span th:text="${contact.phone}"></span></p>
+    <p>郵便番号: <span th:text="${contact.zipCode}"></span></p>
+    <p>住所: <span th:text="${contact.address}"></span></p>
+    <p>建物名: <span th:text="${contact.buildingName}"></span></p>
+    <p>お問い合わせ種別: <span th:text="${contact.contactType}"></span></p>
+    <p>内容: <span th:text="${contact.body}"></span></p>
+    <p>作成日時: <span th:text="${contact.createdAt}"></span></p>
+    <p>更新日時: <span th:text="${contact.updatedAt}"></span></p>
+
+    <a th:href="@{/admin/contacts/{id}/edit(id=${contact.id})}">編集</a>
+    <form th:action="@{/admin/contacts/{id}/delete(id=${contact.id})}" method="post">
+        <button type="submit">削除</button>
+    </form>
+    <a th:href="@{/admin/contacts}">戻る</a>
+</body>
+</html>
