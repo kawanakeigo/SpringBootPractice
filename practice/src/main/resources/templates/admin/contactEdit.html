@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>お問い合わせ編集</title>
+</head>
+<body>
+<h1>お問い合わせ編集</h1>
+<form th:action="@{'/admin/contacts/' + ${contact.id} + '/edit'}" method="post">
+    <input type="text" th:value="${contact.lastName}" name="lastName" required><br>
+    <input type="text" th:value="${contact.firstName}" name="firstName" required><br>
+    <input type="email" th:value="${contact.email}" name="email" required><br>
+    <input type="text" th:value="${contact.phone}" name="phone" required><br>
+    <input type="text" th:value="${contact.zipCode}" name="zipCode" required><br>
+    <input type="text" th:value="${contact.address}" name="address" required><br>
+    <input type="text" th:value="${contact.buildingName}" name="buildingName" required><br>
+    <input type="text" th:value="${contact.contactType}" name="contactType" required><br>
+    <textarea name="body" th:text="${contact.body}"></textarea><br>
+    <button type="submit">更新</button>
+</form>
+</body>
+</html>
