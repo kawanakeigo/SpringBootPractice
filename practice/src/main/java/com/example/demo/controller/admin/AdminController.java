@@ -8,15 +8,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.entity.Contact;
+import com.example.demo.service.AdminService;
 import com.example.demo.service.ContactService;
 
+
 @Controller
+@RequestMapping("/admin")
+
 public class AdminController {
+	
+	@Autowired
+	private AdminService adminService;
 
     @Autowired
     private ContactService contactService;
+    
+    
+    
+   
 
     @GetMapping("/admin/contacts")
     public String contactList(Model model) {
