@@ -25,6 +25,7 @@ public class AdminServiceImpl implements AdminService {
     	if (adminRepository.findByEmail(form.getEmail()).isPresent()) {
             throw new IllegalArgumentException("このメールアドレスは既に登録されています");
         }
+    	
         Admin admin = new Admin();
         admin.setLastName(form.getLastName());
         admin.setFirstName(form.getFirstName());

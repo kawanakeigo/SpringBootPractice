@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AdminContactController {
+	
 
     @GetMapping("/admin/contacts")
     public String showContactList(Model model) {

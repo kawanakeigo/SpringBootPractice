@@ -23,7 +23,6 @@ public class AdminAuthController {
         model.addAttribute("adminForm", new AdminForm());
         return "admin/signup";
     }
-
   
 
     @GetMapping("/signin")
@@ -41,5 +40,4 @@ public class AdminAuthController {
             return "admin/signup";
         }
     }
-
 }

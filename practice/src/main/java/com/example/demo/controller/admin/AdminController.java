@@ -60,8 +60,7 @@ public class AdminController {
             return "redirect:/admin/contacts";
         }
     }
-    
-    
+   
     
 }
 
