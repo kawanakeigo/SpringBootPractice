@@ -22,11 +22,14 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void registerAdmin(AdminForm form) {
+    	if (adminRepository.findByEmail(form.getEmail()).isPresent()) {
+            throw new IllegalArgumentException("このメールアドレスは既に登録されています");
+        }
         Admin admin = new Admin();
         admin.setLastName(form.getLastName());
         admin.setFirstName(form.getFirstName());
         admin.setEmail(form.getEmail());
-        admin.setPassword(encoder.encode(form.getPassword()));
+        admin.setPassword(passwordEncoder.encode(form.getPassword()));
         admin.setCreatedAt(LocalDateTime.now());
         admin.setUpdatedAt(LocalDateTime.now());
         adminRepository.save(admin);
@@ -38,4 +41,11 @@ public class AdminServiceImpl implements AdminService {
                 .filter(admin -> encoder.matches(password, admin.getPassword()))
                 .orElse(null);
     }
+    
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+    
+   
+    
+    
 }

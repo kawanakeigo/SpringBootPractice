@@ -26,7 +26,7 @@ public class AdminController {
     @Autowired
     private ContactService contactService;
     
-    
+ 
     
    
 
@@ -60,5 +60,8 @@ public class AdminController {
             return "redirect:/admin/contacts";
         }
     }
+    
+    
+    
 }
 
